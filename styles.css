@@ -672,69 +672,187 @@ button {
 
 .portfolio-card {
   overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease;
 }
 
-.portfolio-card > div:last-child {
-  padding: 18px;
+.portfolio-card:hover,
+.portfolio-card:focus-within {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow);
+  transform: translateY(-6px);
 }
 
-.portfolio-card p {
-  margin: 0 0 4px;
+.portfolio-link {
+  display: grid;
+  height: 100%;
+}
+
+.portfolio-media {
+  position: relative;
+  min-height: 230px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--portfolio-bg, var(--surface-strong));
+}
+
+.portfolio-media img,
+.portfolio-fallback {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+}
+
+.portfolio-media img {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  opacity: 0.92;
+  transition: opacity 0.32s ease, transform 0.45s ease;
+}
+
+.portfolio-card:hover .portfolio-media img,
+.portfolio-card:focus-within .portfolio-media img {
+  opacity: 0.72;
+  transform: scale(1.045);
+}
+
+.portfolio-fallback {
+  display: grid;
+  align-content: end;
+  gap: 10px;
+  padding: 26px;
+  color: var(--portfolio-text, var(--text));
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--portfolio-bg, var(--surface-strong)) 72%, #ffffff 8%), transparent),
+    radial-gradient(circle at 78% 12%, rgba(255, 255, 255, 0.38), transparent 34%),
+    var(--portfolio-bg, var(--surface-strong));
+}
+
+.portfolio-fallback::before {
+  content: "";
+  display: block;
+  width: min(220px, 74%);
+  height: 120px;
+  margin-bottom: 28px;
+  border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(currentColor 0 0) 22px 22px / 38% 8px no-repeat,
+    linear-gradient(currentColor 0 0) 22px 42px / 58% 7px no-repeat,
+    linear-gradient(currentColor 0 0) 22px 66px / 44% 34px no-repeat,
+    color-mix(in srgb, currentColor 7%, transparent);
+  box-shadow: 18px 18px 0 color-mix(in srgb, currentColor 8%, transparent);
+  opacity: 0.88;
+}
+
+.portfolio-fallback strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 7vw, 2.8rem);
+  line-height: 0.95;
+}
+
+.portfolio-fallback span {
+  max-width: 380px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  opacity: 0.74;
+}
+
+.portfolio-visit {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  color: var(--bg);
+  background: var(--text);
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  font-weight: 900;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.portfolio-card:hover .portfolio-visit,
+.portfolio-card:focus-within .portfolio-visit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-content {
+  display: grid;
+  gap: 12px;
+  padding: 22px;
+}
+
+.portfolio-category {
+  margin: 0;
+  color: var(--muted);
   font-size: 0.74rem;
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.mock {
-  display: grid;
-  min-height: 190px;
-  padding: 22px;
-  align-content: center;
-  gap: 10px;
-}
-
-.mock strong {
+.portfolio-card h3 {
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: clamp(1.45rem, 6vw, 2rem);
   line-height: 1;
 }
 
-.mock span {
-  display: block;
-  width: 70%;
-  height: 8px;
+.portfolio-description {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.portfolio-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 0;
+  margin: 4px 0 0;
+  list-style: none;
+}
+
+.portfolio-techs li {
+  padding: 5px 9px;
+  color: var(--muted);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
   border-radius: 999px;
-  opacity: 0.55;
+  font-size: 0.72rem;
+  font-weight: 800;
 }
 
-.mock-blue {
-  color: #1e3a8a;
-  background: #e8f0fe;
+.portfolio-bezclean {
+  --portfolio-bg: #e8f0fe;
+  --portfolio-text: #1e3a8a;
 }
 
-.mock-rose {
-  color: #831843;
-  background: #fce7f3;
+.portfolio-bruna {
+  --portfolio-bg: #fce7f3;
+  --portfolio-text: #831843;
 }
 
-.mock-gold {
-  color: #78350f;
-  background: #fef3c7;
+.portfolio-elis {
+  --portfolio-bg: #fef3c7;
+  --portfolio-text: #78350f;
 }
 
-.mock-dark {
-  color: #f1f5f9;
-  background: #111827;
+.portfolio-valdoir {
+  --portfolio-bg: #111827;
+  --portfolio-text: #f1f5f9;
 }
 
-.mock-violet {
-  color: #f5f3ff;
-  background: #4c1d95;
-}
-
-.mock span {
-  background: currentColor;
+.portfolio-lanblackout {
+  --portfolio-bg: #4c1d95;
+  --portfolio-text: #f5f3ff;
 }
 
 .differentials-grid {
@@ -962,7 +1080,7 @@ button {
     grid-row: span 2;
   }
 
-  .portfolio-card-large .mock {
+  .portfolio-card-large .portfolio-media {
     min-height: 430px;
   }
 
