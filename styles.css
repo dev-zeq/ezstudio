@@ -15,8 +15,8 @@
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 22px;
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-body: "DM Sans", Arial, sans-serif;
+  --font-display: "Inter", Arial, sans-serif;
+  --font-body: "Inter", Arial, sans-serif;
 }
 
 [data-theme="dark"] {
@@ -105,8 +105,9 @@ button {
 .nav-logo,
 .footer strong {
   font-family: var(--font-display);
-  font-size: 1.55rem;
-  font-weight: 900;
+  font-size: 1.42rem;
+  font-weight: 800;
+  letter-spacing: 0;
   line-height: 1;
 }
 
@@ -313,14 +314,16 @@ button {
 .final-cta h2 {
   margin: 0;
   font-family: var(--font-display);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: 0;
   line-height: 1.04;
 }
 
 .hero-title {
   max-width: 760px;
-  font-size: clamp(3rem, 15vw, 5.6rem);
+  font-size: clamp(2.65rem, 12vw, 5.25rem);
+  line-height: 1.02;
+  text-wrap: balance;
 }
 
 .hero-subtitle,
@@ -328,9 +331,9 @@ button {
 .section-sub,
 .final-cta p {
   max-width: 610px;
-  margin: 22px 0 0;
+  margin: 20px 0 0;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: clamp(1rem, 2.8vw, 1.08rem);
 }
 
 .hero-actions {
