@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0b0d" media="(prefers-color-scheme: dark)">
+
+  <title>EzStudio — Sites, automações e IA aplicada para pequenos negócios</title>
+  <meta name="description" content="Estúdio digital independente. Crio sites rápidos, automações para ganhar tempo e IA aplicada ao que importa — tecnologia sem complicação para o seu negócio.">
+  <meta name="keywords" content="criação de sites, landing page, automação, inteligência artificial aplicada, presença digital, pequenos negócios, site profissional">
+  <link rel="canonical" href="https://ezstudio.com.br/">
+
+  <!-- Open Graph / redes sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://ezstudio.com.br/">
+  <meta property="og:title" content="EzStudio — Soluções digitais que trabalham por você">
+  <meta property="og:description" content="Estúdio digital independente: sites bem pensados, automações para ganhar tempo e IA aplicada ao que realmente importa.">
+  <meta property="og:image" content="https://ezstudio.com.br/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EzStudio — Soluções digitais que trabalham por você">
+  <meta name="twitter:description" content="Sites, automações e IA aplicada para pequenos negócios. Tecnologia sem complicação.">
+  <meta name="twitter:image" content="https://ezstudio.com.br/og-image.jpg">
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans (display/corpo) + Instrument Serif (destaque) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- Folha de estilo (nome preservado conforme o repositório) -->
+  <link rel="stylesheet" href="estilos.css">
+
+  <!-- Schema.org — negócio local / serviço profissional -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "EzStudio",
+    "url": "https://ezstudio.com.br",
+    "description": "Estúdio digital independente especializado em criação de sites, landing pages, automações e inteligência artificial aplicada para pequenos negócios.",
+    "areaServed": "Brasil",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Camboriú",
+      "addressRegion": "SC",
+      "addressCountry": "BR"
+    },
+    "knowsLanguage": "pt-BR",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "atendimento",
+      "availableLanguage": "Portuguese"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Acessibilidade: link para pular direto ao conteúdo -->
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Barra de progresso de leitura (gradiente espectro) -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ─── CABEÇALHO / NAVEGAÇÃO ─────────────────────────────────── -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav" aria-label="Navegação principal">
+
+      <a class="nav-logo" href="#top" aria-label="EzStudio — página inicial">
+        <span class="nav-logo-mark" aria-hidden="true">Ez</span>
+        <span class="nav-logo-text">EzStudio</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#processo">Como funciona</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a href="#estudio">O estúdio</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Alternar tema claro/escuro -->
+        <button class="icon-button" type="button" id="themeToggle" aria-label="Alternar tema claro ou escuro">
+          <span class="theme-glyph" id="themeIcon" aria-hidden="true"></span>
+        </button>
+
+        <!-- CTA principal (desktop) → WhatsApp -->
+        <a class="nav-cta" href="https://wa.me/5547920039182?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20EzStudio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">
+          Falar no WhatsApp
+        </a>
+
+        <!-- Botão hambúrguer (mobile) -->
+        <button class="menu-button" type="button" id="menuButton"
+          aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- ─── MENU MOBILE ───────────────────────────────────────────── -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true" inert>
+    <button class="mobile-menu-close" type="button" id="menuClose" aria-label="Fechar menu">Fechar</button>
+    <ul class="mobile-menu-links" role="list">
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#processo">Como funciona</a></li>
+      <li><a href="#portfolio">Portfólio</a></li>
+      <li><a href="#planos">Planos</a></li>
+      <li><a href="#estudio">O estúdio</a></li>
+      <li><a class="mobile-menu-cta" href="https://wa.me/5547920039182?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20EzStudio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">Falar no WhatsApp</a></li>
+    </ul>
+  </div>
+
+  <!-- ─── CONTEÚDO PRINCIPAL ────────────────────────────────────── -->
+  <main id="conteudo">
+    <span id="top"></span>
+
+    <!-- HERO ─────────────────────────────────────────────────────── -->
+    <section class="hero" aria-labelledby="heroTitle">
+
+      <!-- Fundo aurora/malha colorida (decorativo) -->
+      <div class="aurora" id="aurora" aria-hidden="true">
+        <span class="aurora-blob aurora-blob--1"></span>
+        <span class="aurora-blob aurora-blob--2"></span>
+        <span class="aurora-blob aurora-blob--3"></span>
+        <span class="aurora-grid"></span>
+      </div>
+
+      <div class="hero-content">
+        <p class="hero-badge">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          Disponível para novos projetos
+        </p>
+
+        <h1 class="hero-title" id="heroTitle">
+          Soluções digitais que<br>
+          <em class="grad-text">trabalham por você.</em>
+        </h1>
+
+        <p class="hero-subtitle">
+          Sites bem pensados, automações que poupam seu tempo e IA aplicada ao que
+          importa de verdade — feitos com capricho e conversa honesta, do primeiro
+          “oi” ao site no ar. A sua ideia merece sair do papel sem complicação.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary"
+            href="https://wa.me/5547920039182?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20EzStudio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+            target="_blank" rel="noopener">
+            <svg class="button-wa-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.2 1.26-1.96 1.42-.52.11-1.2.2-3.48-.74-2.92-1.21-4.8-4.18-4.95-4.37-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.01-2.42.24-.27.53-.34.71-.34.18 0 .35 0 .51.01.16.01.38-.06.6.46.24.55.79 1.91.86 2.05.07.14.12.3.02.49-.1.19-.14.3-.29.46-.14.16-.3.36-.43.48-.14.14-.29.29-.12.57.16.27.73 1.2 1.56 1.95 1.07.95 1.97 1.25 2.25 1.39.27.14.43.12.59-.07.16-.19.69-.8.87-1.08.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.12.07.66-.17 1.34z"/></svg>
+            Falar no WhatsApp
+          </a>
+          <a class="button button-secondary" href="#portfolio">Ver projetos</a>
+        </div>
+
+        <!-- Microcopy de reassurance: reduz o atrito e soa humano -->
+        <p class="hero-reassure">
+          <span class="hero-reassure-dot" aria-hidden="true"></span>
+          Resposta no mesmo dia · conversa sem compromisso
+        </p>
+      </div>
+
+      <!-- Assinatura visual: prisma que refrata a luz em um espectro -->
+      <div class="prism-stage" aria-hidden="true">
+        <svg class="prism-svg" viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg" role="img">
+          <defs>
+            <linearGradient id="px-glass" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
+              <stop offset="50%" stop-color="#c7d2fe" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#a5b4fc" stop-opacity="0.15"/>
+            </linearGradient>
+            <linearGradient id="px-in" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95"/>
+            </linearGradient>
+            <linearGradient id="px-cyan"   x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#06b6d4" stop-opacity="0.05"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient>
+            <linearGradient id="px-indigo" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4f46e5" stop-opacity="0.05"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+            <linearGradient id="px-violet" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.05"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+            <linearGradient id="px-pink"   x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ec4899" stop-opacity="0.05"/><stop offset="100%" stop-color="#f472b6"/></linearGradient>
+            <linearGradient id="px-amber"  x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.05"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+            <filter id="px-soft" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="6"/>
+            </filter>
+          </defs>
+
+          <!-- Feixe de entrada (luz branca = a sua ideia) -->
+          <rect class="prism-in" x="20" y="206" width="220" height="6" rx="3" fill="url(#px-in)"/>
+
+          <!-- Feixes de saída (o espectro = as soluções) -->
+          <g class="prism-beams">
+            <g class="beam beam--1"><rect x="262" y="207" width="248" height="5" rx="2.5" fill="url(#px-cyan)"   transform="rotate(-26 262 209)" filter="url(#px-soft)"/></g>
+            <g class="beam beam--2"><rect x="262" y="207" width="248" height="5" rx="2.5" fill="url(#px-indigo)" transform="rotate(-13 262 209)" filter="url(#px-soft)"/></g>
+            <g class="beam beam--3"><rect x="262" y="207" width="248" height="5" rx="2.5" fill="url(#px-violet)" transform="rotate(0 262 209)"   filter="url(#px-soft)"/></g>
+            <g class="beam beam--4"><rect x="262" y="207" width="248" height="5" rx="2.5" fill="url(#px-pink)"   transform="rotate(13 262 209)"  filter="url(#px-soft)"/></g>
+            <g class="beam beam--5"><rect x="262" y="207" width="248" height="5" rx="2.5" fill="url(#px-amber)"  transform="rotate(26 262 209)"  filter="url(#px-soft)"/></g>
+          </g>
+
+          <!-- Pontos de luz nas pontas dos feixes -->
+          <g class="prism-dots">
+            <circle class="dot dot--1" cx="487" cy="98"  r="4" fill="#22d3ee"/>
+            <circle class="dot dot--2" cx="505" cy="153" r="4" fill="#6366f1"/>
+            <circle class="dot dot--3" cx="510" cy="209" r="4" fill="#a78bfa"/>
+            <circle class="dot dot--4" cx="505" cy="265" r="4" fill="#f472b6"/>
+            <circle class="dot dot--5" cx="487" cy="320" r="4" fill="#fbbf24"/>
+          </g>
+
+          <!-- O prisma (vidro) -->
+          <g class="prism-glass">
+            <polygon points="250,96 196,300 304,300" fill="url(#px-glass)" stroke="#ffffff" stroke-opacity="0.55" stroke-width="1.5"/>
+            <polygon points="250,96 196,300 304,300" fill="none" stroke="#a5b4fc" stroke-opacity="0.4" stroke-width="1"/>
+            <line class="prism-glint" x1="250" y1="110" x2="232" y2="180" stroke="#ffffff" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+
+    </section>
+
+    <!-- FAIXA DE PROJETOS NO AR ──────────────────────────────────── -->
+    <section class="logos-strip" aria-labelledby="projectsTitle">
+      <p class="eyebrow" id="projectsTitle">Projetos no ar</p>
+      <div class="logos-row">
+        <span>Bez Clean</span>
+        <span class="logos-dot" aria-hidden="true">·</span>
+        <span>Bruna Oliveira</span>
+        <span class="logos-dot" aria-hidden="true">·</span>
+        <span>Elis Studio</span>
+        <span class="logos-dot" aria-hidden="true">·</span>
+        <span>Valdoir Miranda</span>
+        <span class="logos-dot" aria-hidden="true">·</span>
+        <span>Lan Blackout</span>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS ─────────────────────────────────────────────────── -->
+    <section class="section services" id="servicos" aria-labelledby="servicesTitle">
+
+      <div class="section-header reveal">
+        <p class="eyebrow">Serviços</p>
+        <h2 id="servicesTitle">Tecnologia sem complicação, da ideia ao no ar.</h2>
+        <p class="section-sub">Quatro frentes que costumam andar juntas — você escolhe por onde começar.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <article class="service-card reveal" style="--accent:#4f46e5">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 18v3M16 18v3M6 21h12"/></svg>
+          </span>
+          <h3>Sites &amp; landing pages</h3>
+          <p>Páginas rápidas, claras e fáceis de usar, pensadas para o visitante virar contato.</p>
+          <ul class="tags" role="list"><li>Institucional</li><li>Landing page</li><li>Portfólio</li></ul>
+        </article>
+
+        <article class="service-card reveal" style="--accent:#06b6d4">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M4 7a2 2 0 1 0 4 0 2 2 0 0 0-4 0zM20 17H10M20 17a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM14 7h6M4 17h2"/></svg>
+          </span>
+          <h3>Automações</h3>
+          <p>Fluxos simples que cuidam de tarefas repetitivas e liberam o seu tempo.</p>
+          <ul class="tags" role="list"><li>WhatsApp</li><li>Planilhas</li><li>Integrações</li></ul>
+        </article>
+
+        <article class="service-card reveal" style="--accent:#8b5cf6">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M3 12h3M18 12h3M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.2"/></svg>
+          </span>
+          <h3>IA aplicada</h3>
+          <p>Assistentes e ferramentas com IA aplicada ao que realmente pesa no seu dia a dia.</p>
+          <ul class="tags" role="list"><li>Atendimento</li><li>Conteúdo</li><li>Apoio</li></ul>
+        </article>
+
+        <article class="service-card reveal" style="--accent:#ec4899">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          </span>
+          <h3>Presença digital</h3>
+          <p>Hospedagem, SEO e ajustes para o seu negócio ser encontrado e carregar rápido.</p>
+          <ul class="tags" role="list"><li>SEO</li><li>Performance</li><li>Manutenção</li></ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA ────────────────────────────────────────────── -->
+    <section class="section process" id="processo" aria-labelledby="processTitle">
+
+      <div class="section-header section-header-center reveal">
+        <p class="eyebrow">Como funciona</p>
+        <h2 id="processTitle">Da conversa ao site no ar, em cinco passos.</h2>
+        <p class="section-sub">Sem burocracia. Você acompanha cada etapa e fala sempre com a mesma pessoa.</p>
+      </div>
+
+      <ol class="steps reveal">
+        <li>
+          <span class="step-num" aria-hidden="true">01</span>
+          <strong>Conversa</strong>
+          <p>A gente conversa pelo WhatsApp para entender o negócio, o público e o objetivo.</p>
+        </li>
+        <li>
+          <span class="step-num" aria-hidden="true">02</span>
+          <strong>Planejamento</strong>
+          <p>Defino a solução mais simples que resolve, com prazo e orçamento claros.</p>
+        </li>
+        <li>
+          <span class="step-num" aria-hidden="true">03</span>
+          <strong>Construção</strong>
+          <p>Desenvolvo com capricho, revisando cada detalhe junto com você.</p>
+        </li>
+        <li>
+          <span class="step-num" aria-hidden="true">04</span>
+          <strong>Publicação</strong>
+          <p>Coloco no ar com testes de velocidade, celular e SEO antes de entregar.</p>
+        </li>
+        <li>
+          <span class="step-num" aria-hidden="true">05</span>
+          <strong>Evolução</strong>
+          <p>Fico por perto para ajustar e fazer o projeto crescer com o seu negócio.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- PORTFÓLIO ────────────────────────────────────────────────── -->
+    <section class="section portfolio" id="portfolio" aria-labelledby="portfolioTitle">
+
+      <div class="section-header reveal">
+        <p class="eyebrow">Portfólio</p>
+        <h2 id="portfolioTitle">Alguns projetos que coloquei no ar.</h2>
+        <p class="section-sub">Cada um resolveu um problema específico. Toque em “Detalhes” para ver o caso por trás.</p>
+      </div>
+
+      <div class="portfolio-grid reveal">
+
+        <!-- Bez Clean -->
+        <article class="project-card" style="--accent:#06b6d4">
+          <header class="project-head">
+            <span class="project-mark" aria-hidden="true">BC</span>
+            <span class="project-cat">Limpeza profissional</span>
+          </header>
+          <h3 class="project-name">Bez Clean</h3>
+          <p class="project-line">Site comercial com orçamento rápido e contato direto pelo WhatsApp.</p>
+          <ul class="project-techs" role="list"><li>HTML</li><li>CSS</li><li>JS</li><li>Automação</li></ul>
+          <div class="project-actions">
+            <a class="project-visit" href="https://bezclean.com.br/" target="_blank" rel="noopener">Ver site<span aria-hidden="true"> ↗</span></a>
+            <button class="project-details" type="button" data-modal="case-bezclean" aria-haspopup="dialog">Detalhes</button>
+          </div>
+        </article>
+
+        <!-- Bruna Oliveira -->
+        <article class="project-card" style="--accent:#4f46e5">
+          <header class="project-head">
+            <span class="project-mark" aria-hidden="true">BO</span>
+            <span class="project-cat">Portfólio esportivo</span>
+          </header>
+          <h3 class="project-name">Bruna Oliveira</h3>
+          <p class="project-line">Vitrine de uma atleta: conquistas, calendário de provas e apoio.</p>
+          <ul class="project-techs" role="list"><li>HTML</li><li>CSS</li><li>JS</li><li>SEO</li></ul>
+          <div class="project-actions">
+            <a class="project-visit" href="https://brunaoliveira.com.br/" target="_blank" rel="noopener">Ver site<span aria-hidden="true"> ↗</span></a>
+            <button class="project-details" type="button" data-modal="case-bruna" aria-haspopup="dialog">Detalhes</button>
+          </div>
+        </article>
+
+        <!-- Elis Studio -->
+        <article class="project-card" style="--accent:#ec4899">
+          <header class="project-head">
+            <span class="project-mark" aria-hidden="true">ES</span>
+            <span class="project-cat">Beleza e estética</span>
+          </header>
+          <h3 class="project-name">Elis Studio</h3>
+          <p class="project-line">Landing page elegante com serviços, galeria e agendamento.</p>
+          <ul class="project-techs" role="list"><li>HTML</li><li>CSS</li><li>JS</li><li>Mobile-first</li></ul>
+          <div class="project-actions">
+            <a class="project-visit" href="https://elismiranda.com.br/" target="_blank" rel="noopener">Ver site<span aria-hidden="true"> ↗</span></a>
+            <button class="project-details" type="button" data-modal="case-elis" aria-haspopup="dialog">Detalhes</button>
+          </div>
+        </article>
+
+        <!-- Valdoir Miranda -->
+        <article class="project-card" style="--accent:#f59e0b">
+          <header class="project-head">
+            <span class="project-mark" aria-hidden="true">VM</span>
+            <span class="project-cat">Marca pessoal</span>
+          </header>
+          <h3 class="project-name">Valdoir Miranda</h3>
+          <p class="project-line">Site pessoal colorido para apresentar trajetória e ideias.</p>
+          <ul class="project-techs" role="list"><li>HTML</li><li>CSS</li><li>UX</li><li>Performance</li></ul>
+          <div class="project-actions">
+            <a class="project-visit" href="https://dev-zeq.github.io/valdoirmiranda/" target="_blank" rel="noopener">Ver site<span aria-hidden="true"> ↗</span></a>
+            <button class="project-details" type="button" data-modal="case-valdoir" aria-haspopup="dialog">Detalhes</button>
+          </div>
+        </article>
+
+        <!-- Lan Blackout -->
+        <article class="project-card" style="--accent:#8b5cf6">
+          <header class="project-head">
+            <span class="project-mark" aria-hidden="true">LB</span>
+            <span class="project-cat">Cortinas e persianas</span>
+          </header>
+          <h3 class="project-name">Lan Blackout</h3>
+          <p class="project-line">Página de campanha com visual marcante e chamada direta.</p>
+          <ul class="project-techs" role="list"><li>HTML</li><li>CSS</li><li>JS</li><li>Landing page</li></ul>
+          <div class="project-actions">
+            <a class="project-visit" href="https://presentes.lanblackout.com/" target="_blank" rel="noopener">Ver site<span aria-hidden="true"> ↗</span></a>
+            <button class="project-details" type="button" data-modal="case-lan" aria-haspopup="dialog">Detalhes</button>
+          </div>
+        </article>
+
+        <!-- Card "seu projeto aqui" → CTA -->
+        <article class="project-card project-card--cta" style="--accent:#6366f1">
+          <header class="project-head">
+            <span class="project-mark project-mark--plus" aria-hidden="true">+</span>
+            <span class="project-cat">Próximo projeto</span>
+          </header>
+          <h3 class="project-name">O seu pode ser o próximo.</h3>
+          <p class="project-line">Me conta sua ideia e eu te mostro o caminho mais simples até ela no ar.</p>
+          <div class="project-actions">
+            <a class="project-visit project-visit--strong"
+              href="https://wa.me/5547920039182?text=Ol%C3%A1!%20Vi%20o%20portf%C3%B3lio%20da%20EzStudio%20e%20quero%20conversar%20sobre%20o%20meu%20projeto."
+              target="_blank" rel="noopener">Começar pelo WhatsApp<span aria-hidden="true"> ↗</span></a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS ──────────────────────────────────────────────── -->
+    <section class="section testimonials" id="depoimentos" aria-labelledby="testimonialsTitle">
+
+      <div class="section-header section-header-center reveal">
+        <p class="eyebrow">Quem confiou</p>
+        <h2 id="testimonialsTitle">O que dizem <em class="grad-text">os clientes.</em></h2>
+        <p class="section-sub">Gente real, projetos reais. Aqui vão algumas palavras de quem já está no ar.</p>
+      </div>
+
+      <!-- ⚠️ ATENÇÃO: estes depoimentos são EXEMPLOS para você ver o formato.
+           Troque pelas palavras REAIS dos seus clientes (de preferência com a
+           autorização deles). Pode adicionar ou remover cards à vontade. -->
+      <div class="testimonials-grid reveal">
+
+        <figure class="testimonial-card" style="--accent:#06b6d4">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <blockquote>O site novo abre rápido e já chega gente no WhatsApp sabendo o que quer. Ficou com a cara do nosso trabalho.</blockquote>
+          <figcaption>
+            <span class="testimonial-name">Bez Clean</span>
+            <span class="testimonial-role">Limpeza profissional · Camboriú/SC</span>
+          </figcaption>
+        </figure>
+
+        <figure class="testimonial-card" style="--accent:#4f46e5">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <blockquote>Finalmente tenho um espaço meu para mostrar a carreira e receber apoio. Ficou leve e fácil de manter atualizado.</blockquote>
+          <figcaption>
+            <span class="testimonial-name">Bruna Oliveira</span>
+            <span class="testimonial-role">Atleta de corrida de rua</span>
+          </figcaption>
+        </figure>
+
+        <figure class="testimonial-card" style="--accent:#ec4899">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <blockquote>A página ficou com o clima exato que eu queria: elegante e sem exagero. As clientes sempre elogiam.</blockquote>
+          <figcaption>
+            <span class="testimonial-name">Elis Studio</span>
+            <span class="testimonial-role">Lash &amp; brow design · São Leopoldo/RS</span>
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- PLANOS ───────────────────────────────────────────────────── -->
+    <section class="section pricing" id="planos" aria-labelledby="pricingTitle">
+
+      <div class="section-header section-header-center reveal">
+        <p class="eyebrow">Planos</p>
+        <h2 id="pricingTitle">Preço claro, <em class="grad-text">conversa antes.</em></h2>
+        <p class="section-sub">
+          Cada projeto é único, então os valores abaixo são pontos de partida. A gente
+          conversa, entende seu momento e ajusta o que faz sentido pra você.
+        </p>
+        <ul class="pricing-assurance" role="list">
+          <li><span aria-hidden="true">✓</span> Pagamento único</li>
+          <li><span aria-hidden="true">✓</span> Pode parcelar</li>
+          <li><span aria-hidden="true">✓</span> Sem mensalidade escondida</li>
+        </ul>
+      </div>
+
+      <div class="pricing-grid reveal">
+
+        <!-- Presença -->
+        <article class="pricing-card">
+          <div class="pricing-top">
+            <span class="pricing-plan">Presença</span>
+            <p class="pricing-desc">Para quem nunca teve site e quer aparecer online o quanto antes.</p>
+          </div>
+          <div class="pricing-price"><em class="pricing-from">a partir de</em><strong>R$&nbsp;597</strong><span>pagamento único, sem mensalidade</span></div>
+          <ul class="pricing-features" role="list">
+            <li><span aria-hidden="true">✓</span> Landing page de 1 página</li>
+            <li><span aria-hidden="true">✓</span> Botão de WhatsApp integrado</li>
+            <li><span aria-hidden="true">✓</span> Google Maps + endereço</li>
+            <li><span aria-hidden="true">✓</span> Adaptado para o celular</li>
+            <li><span aria-hidden="true">✓</span> Entrega em até 5 dias úteis</li>
+            <li class="pricing-feature-off"><span aria-hidden="true">–</span> Domínio incluso</li>
+            <li class="pricing-feature-off"><span aria-hidden="true">–</span> SEO avançado</li>
+          </ul>
+          <a class="pricing-cta pricing-cta-secondary"
+            href="https://wa.me/5547920039182?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Presen%C3%A7a."
+            target="_blank" rel="noopener">Começar por aqui</a>
+        </article>
+
+        <!-- Essencial (destaque) -->
+        <article class="pricing-card pricing-card-featured">
+          <div class="pricing-badge">Mais escolhido</div>
+          <div class="pricing-top">
+            <span class="pricing-plan">Essencial</span>
+            <p class="pricing-desc">Para passar profissionalismo e ser encontrado no Google.</p>
+          </div>
+          <div class="pricing-price"><em class="pricing-from">a partir de</em><strong>R$&nbsp;1.197</strong><span>pagamento único, sem mensalidade</span></div>
+          <ul class="pricing-features" role="list">
+            <li><span aria-hidden="true">✓</span> Site com até 4 páginas</li>
+            <li><span aria-hidden="true">✓</span> WhatsApp + formulário de contato</li>
+            <li><span aria-hidden="true">✓</span> SEO básico configurado</li>
+            <li><span aria-hidden="true">✓</span> Domínio + hospedagem (1º ano)</li>
+            <li><span aria-hidden="true">✓</span> Adaptado para o celular</li>
+            <li><span aria-hidden="true">✓</span> Entrega em até 7 dias úteis</li>
+            <li><span aria-hidden="true">✓</span> 30 dias de suporte incluso</li>
+          </ul>
+          <a class="pricing-cta pricing-cta-primary"
+            href="https://wa.me/5547920039182?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Essencial."
+            target="_blank" rel="noopener">Começar por aqui</a>
+        </article>
+
+        <!-- Pro -->
+        <article class="pricing-card">
+          <div class="pricing-top">
+            <span class="pricing-plan">Pro</span>
+            <p class="pricing-desc">Para quem quer vender mais, não só aparecer — com automações.</p>
+          </div>
+          <div class="pricing-price"><em class="pricing-from">a partir de</em><strong>R$&nbsp;2.497</strong><span>pagamento único, sem mensalidade</span></div>
+          <ul class="pricing-features" role="list">
+            <li><span aria-hidden="true">✓</span> Tudo do plano Essencial</li>
+            <li><span aria-hidden="true">✓</span> Automação de WhatsApp</li>
+            <li><span aria-hidden="true">✓</span> Calculadora de orçamento online</li>
+            <li><span aria-hidden="true">✓</span> Integração com Google Agenda</li>
+            <li><span aria-hidden="true">✓</span> SEO avançado + Google Business</li>
+            <li><span aria-hidden="true">✓</span> 60 dias de suporte incluso</li>
+            <li><span aria-hidden="true">✓</span> Relatório mensal de acessos</li>
+          </ul>
+          <a class="pricing-cta pricing-cta-secondary"
+            href="https://wa.me/5547920039182?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Pro."
+            target="_blank" rel="noopener">Começar por aqui</a>
+        </article>
+
+      </div>
+
+      <p class="pricing-note reveal">
+        Não se encaixou em nenhum? Tudo bem —
+        <a href="https://wa.me/5547920039182?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20personalizado." target="_blank" rel="noopener">a gente monta um plano sob medida pra você →</a>
+      </p>
+    </section>
+
+    <!-- O ESTÚDIO (diferenciais honestos) ─────────────────────────── -->
+    <section class="section studio" id="estudio" aria-labelledby="studioTitle">
+      <div class="studio-grid">
+
+        <div class="reveal">
+          <p class="eyebrow">O estúdio</p>
+          <h2 id="studioTitle">Não é uma agência. É um estúdio, com nome e dono.</h2>
+          <p class="section-sub">
+            Oi, eu sou o Ezequiel. A EzStudio é o meu jeito de transformar curiosidade por
+            tecnologia em coisas úteis pra quem está começando ou crescendo. Você fala direto
+            comigo — do primeiro “oi” ao site no ar, sem intermediário e sem promessa que não cabe.
+          </p>
+
+          <div class="benefits">
+            <article>
+              <span>Autodidata apaixonado por tecnologia</span>
+              <p>Aprendi na prática: testando, errando e melhorando. Pra mim, tecnologia é curiosidade que vira solução.</p>
+            </article>
+            <article>
+              <span>Experiência com projetos reais</span>
+              <p>Não é teoria. São sites de verdade, no ar, usados por gente de verdade — e cada um me ensinou algo novo.</p>
+            </article>
+            <article>
+              <span>Começando a faculdade de ADS</span>
+              <p>Estou iniciando Análise e Desenvolvimento de Sistemas para somar base técnica à bagagem da prática.</p>
+            </article>
+            <article>
+              <span>Em evolução constante</span>
+              <p>Estudo, reviso e melhoro a cada entrega. O que aprendo de novo entra no seu projeto também.</p>
+            </article>
+          </div>
+        </div>
+
+        <aside class="quality-card reveal" aria-label="Padrão de qualidade de cada entrega">
+          <p class="quality-kicker">Projetos no ar</p>
+          <strong class="quality-number">5</strong>
+          <span class="quality-sub">reais, publicados e em evolução. Toda entrega é construída mirando notas altas em:</span>
+          <div class="progress-list">
+            <div>
+              <label>Performance <span>≈ 98</span></label>
+              <i><b data-width="98%"></b></i>
+            </div>
+            <div>
+              <label>Acessibilidade <span>≈ 95</span></label>
+              <i><b data-width="95%"></b></i>
+            </div>
+            <div>
+              <label>SEO <span>≈ 100</span></label>
+              <i><b data-width="100%"></b></i>
+            </div>
+          </div>
+          <p class="quality-foot">Metas de qualidade técnica, medidas no Lighthouse — não promessa de resultado.</p>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- CTA FINAL ────────────────────────────────────────────────── -->
+    <section class="final-cta" aria-labelledby="ctaTitle">
+      <div class="final-cta-inner reveal">
+        <p class="eyebrow eyebrow--light">Vamos conversar?</p>
+        <h2 id="ctaTitle">Conte sua ideia. Eu te mostro o caminho mais simples até ela no ar.</h2>
+        <p class="final-cta-sub">Resposta rápida pelo WhatsApp, sem compromisso e sem juridiquês.</p>
+        <a class="whatsapp-button"
+          href="https://wa.me/5547920039182?text=Ol%C3%A1!%20Vi%20o%20site%20da%20EzStudio%20e%20gostaria%20de%20conversar%20sobre%20o%20meu%20projeto."
+          target="_blank" rel="noopener"
+          aria-label="Falar no WhatsApp com a EzStudio">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.2 1.26-1.96 1.42-.52.11-1.2.2-3.48-.74-2.92-1.21-4.8-4.18-4.95-4.37-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.01-2.42.24-.27.53-.34.71-.34.18 0 .35 0 .51.01.16.01.38-.06.6.46.24.55.79 1.91.86 2.05.07.14.12.3.02.49-.1.19-.14.3-.29.46-.14.16-.3.36-.43.48-.14.14-.29.29-.12.57.16.27.73 1.2 1.56 1.95 1.07.95 1.97 1.25 2.25 1.39.27.14.43.12.59-.07.16-.19.69-.8.87-1.08.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.12.07.66-.17 1.34z"/></svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── MODAIS DE PORTFÓLIO (mini-cases) ──────────────────────── -->
+  <div class="modals" id="modals">
+
+    <!-- Bez Clean -->
+    <div class="case-modal" id="case-bezclean" role="dialog" aria-modal="true" aria-labelledby="case-bezclean-title" hidden>
+      <div class="case-backdrop" data-close></div>
+      <div class="case-panel" style="--accent:#06b6d4" tabindex="-1">
+        <button class="case-close" type="button" aria-label="Fechar" data-close>✕</button>
+        <p class="project-cat">Limpeza profissional</p>
+        <h3 id="case-bezclean-title" class="case-title">Bez Clean</h3>
+        <div class="case-blocks">
+          <div><span>Problema</span><p>Um site antigo e pesado, que não passava confiança nem gerava orçamentos.</p></div>
+          <div><span>Solução</span><p>Site rápido com visual premium, calculadora de orçamento e contato direto no WhatsApp.</p></div>
+          <div><span>Entrega</span><p>Uma página que abre rápido no celular e transforma visita em conversa.</p></div>
+        </div>
+        <ul class="project-techs" role="list"><li>HTML</li><li>CSS</li><li>JS</li><li>Automação WhatsApp</li></ul>
+        <a class="button button-primary case-link" href="https://bezclean.com.br/" target="_blank" rel="noopener">Visitar Bez Clean ↗</a>
+      </div>
+    </div>
+
+    <!-- Bruna Oliveira -->
+    <div class="case-modal" id="case-bruna" role="dialog" aria-modal="true" aria-labelledby="case-bruna-title" hidden>
+      <div class="case-backdrop" data-close></div>
+      <div class="case-panel" style="--accent:#4f46e5" tabindex="-1">
+        <button class="case-close" type="button" aria-label="Fechar" data-close>✕</button>
+        <p class="project-cat">Portfólio esportivo</p>
+        <h3 id="case-bruna-title" class="case-title">Bruna Oliveira</h3>
+        <div class="case-blocks">
+          <div><span>Problema</span><p>Uma atleta precisava de um espaço próprio para mostrar a carreira e atrair apoio.</p></div>
+          <div><span>Solução</span><p>Portfólio esportivo com conquistas, calendário de provas e seção de patrocínio.</p></div>
+          <div><span>Entrega</span><p>Uma vitrine profissional, leve e fácil de manter atualizada.</p></div>
+        </div>
+        <ul class="project-techs" role="list"><li>HTML</li><li>CSS</li><li>JS</li><li>SEO</li></ul>
+        <a class="button button-primary case-link" href="https://brunaoliveira.com.br/" target="_blank" rel="noopener">Visitar Bruna Oliveira ↗</a>
+      </div>
+    </div>
+
+    <!-- Elis Studio -->
+    <div class="case-modal" id="case-elis" role="dialog" aria-modal="true" aria-labelledby="case-elis-title" hidden>
+      <div class="case-backdrop" data-close></div>
+      <div class="case-panel" style="--accent:#ec4899" tabindex="-1">
+        <button class="case-close" type="button" aria-label="Fechar" data-close>✕</button>
+        <p class="project-cat">Beleza e estética</p>
+        <h3 id="case-elis-title" class="case-title">Elis Studio</h3>
+        <div class="case-blocks">
+          <div><span>Problema</span><p>Faltava uma página à altura de um trabalho premium de beleza.</p></div>
+          <div><span>Solução</span><p>Landing page elegante com serviços, galeria e agendamento pelo WhatsApp.</p></div>
+          <div><span>Entrega</span><p>Visual refinado e responsivo, do convite ao agendamento.</p></div>
+        </div>
+        <ul class="project-techs" role="list"><li>HTML</li><li>CSS</li><li>JS</li><li>Mobile-first</li></ul>
+        <a class="button button-primary case-link" href="https://elismiranda.com.br/" target="_blank" rel="noopener">Visitar Elis Studio ↗</a>
+      </div>
+    </div>
+
+    <!-- Valdoir Miranda -->
+    <div class="case-modal" id="case-valdoir" role="dialog" aria-modal="true" aria-labelledby="case-valdoir-title" hidden>
+      <div class="case-backdrop" data-close></div>
+      <div class="case-panel" style="--accent:#f59e0b" tabindex="-1">
+        <button class="case-close" type="button" aria-label="Fechar" data-close>✕</button>
+        <p class="project-cat">Marca pessoal</p>
+        <h3 id="case-valdoir-title" class="case-title">Valdoir Miranda</h3>
+        <div class="case-blocks">
+          <div><span>Problema</span><p>O trabalho de uma vida sem um lugar digno na internet.</p></div>
+          <div><span>Solução</span><p>Site pessoal com identidade marcante para apresentar trajetória e ideias.</p></div>
+          <div><span>Entrega</span><p>Uma página colorida, organizada e fácil de navegar.</p></div>
+        </div>
+        <ul class="project-techs" role="list"><li>HTML</li><li>CSS</li><li>UX</li><li>Performance</li></ul>
+        <a class="button button-primary case-link" href="https://dev-zeq.github.io/valdoirmiranda/" target="_blank" rel="noopener">Visitar Valdoir Miranda ↗</a>
+      </div>
+    </div>
+
+    <!-- Lan Blackout -->
+    <div class="case-modal" id="case-lan" role="dialog" aria-modal="true" aria-labelledby="case-lan-title" hidden>
+      <div class="case-backdrop" data-close></div>
+      <div class="case-panel" style="--accent:#8b5cf6" tabindex="-1">
+        <button class="case-close" type="button" aria-label="Fechar" data-close>✕</button>
+        <p class="project-cat">Cortinas e persianas</p>
+        <h3 id="case-lan-title" class="case-title">Lan Blackout</h3>
+        <div class="case-blocks">
+          <div><span>Problema</span><p>Uma campanha precisava de uma página com visual forte e chamada direta.</p></div>
+          <div><span>Solução</span><p>Landing page de campanha com identidade marcante e CTA objetivo.</p></div>
+          <div><span>Entrega</span><p>Página pensada para datas especiais e contato rápido.</p></div>
+        </div>
+        <ul class="project-techs" role="list"><li>HTML</li><li>CSS</li><li>JS</li><li>Landing page</li></ul>
+        <a class="button button-primary case-link" href="https://presentes.lanblackout.com/" target="_blank" rel="noopener">Visitar Lan Blackout ↗</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── RODAPÉ ────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <span class="footer-logo">
+          <span class="footer-logo-mark" aria-hidden="true">Ez</span>
+          EzStudio
+        </span>
+        <p class="footer-slogan">Tecnologia bem-feita, sem complicação.</p>
+        <p class="footer-about">
+          Estúdio digital independente em Camboriú/SC. Sites bem pensados, automações
+          para ganhar tempo e IA aplicada ao que importa.
+        </p>
+
+        <!-- Redes e contato -->
+        <div class="footer-social">
+          <a href="https://wa.me/5547920039182?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20EzStudio." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.2 1.26-1.96 1.42-.52.11-1.2.2-3.48-.74-2.92-1.21-4.8-4.18-4.95-4.37-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.01-2.42.24-.27.53-.34.71-.34.18 0 .35 0 .51.01.16.01.38-.06.6.46.24.55.79 1.91.86 2.05.07.14.12.3.02.49-.1.19-.14.3-.29.46-.14.16-.3.36-.43.48-.14.14-.29.29-.12.57.16.27.73 1.2 1.56 1.95 1.07.95 1.97 1.25 2.25 1.39.27.14.43.12.59-.07.16-.19.69-.8.87-1.08.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.12.07.66-.17 1.34z"/></svg>
+            <span>WhatsApp</span>
+          </a>
+          <!-- Troque a URL abaixo pelo @ real do seu Instagram -->
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram da EzStudio">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+            <span>Instagram</span>
+          </a>
+          <!-- Confirme se este é o seu usuário do GitHub -->
+          <a href="https://github.com/dev-zeq" target="_blank" rel="noopener" aria-label="GitHub da EzStudio">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.4 9.4 0 0 1 12 6.84c.85 0 1.71.12 2.51.34 1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <nav aria-label="Links de serviços">
+        <h2>Serviços</h2>
+        <a href="#servicos">Sites e landing pages</a>
+        <a href="#servicos">Automações</a>
+        <a href="#servicos">IA aplicada</a>
+        <a href="#servicos">Presença digital</a>
+      </nav>
+
+      <nav aria-label="Links do site">
+        <h2>Navegar</h2>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#planos">Planos</a>
+        <a href="#estudio">O estúdio</a>
+      </nav>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> EzStudio · Camboriú · Santa Catarina · Brasil</span>
+      <span class="footer-human">Feito à mão, com café e atenção aos detalhes — um projeto de cada vez.</span>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante de WhatsApp (aparece ao rolar) -->
+  <a class="wa-float" id="waFloat"
+    href="https://wa.me/5547920039182?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20EzStudio%20e%20gostaria%20de%20conversar."
+    target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.2 1.26-1.96 1.42-.52.11-1.2.2-3.48-.74-2.92-1.21-4.8-4.18-4.95-4.37-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.01-2.42.24-.27.53-.34.71-.34.18 0 .35 0 .51.01.16.01.38-.06.6.46.24.55.79 1.91.86 2.05.07.14.12.3.02.49-.1.19-.14.3-.29.46-.14.16-.3.36-.43.48-.14.14-.29.29-.12.57.16.27.73 1.2 1.56 1.95 1.07.95 1.97 1.25 2.25 1.39.27.14.43.12.59-.07.16-.19.69-.8.87-1.08.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.12.07.66-.17 1.34z"/></svg>
+  </a>
+
+  <!-- Script principal (caminho preservado) -->
+  <script src="app.js" defer></script>
+
+</body>
+</html>
