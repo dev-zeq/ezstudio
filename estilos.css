@@ -510,38 +510,64 @@ p { margin: 0; overflow-wrap: break-word; }
 @keyframes drift2 { to { transform: translate(-36px, 26px) scale(1.08); } }
 @keyframes drift3 { to { transform: translate(30px, -28px) scale(1.14); } }
 
-/* Balões coloridos subindo (hero e CTA final) */
-.balloons { position: absolute; inset: 0; z-index: 1; overflow: hidden; pointer-events: none; }
-.balloon {
-  position: absolute;
-  bottom: -90px;
-  width: 34px; height: 42px;
-  background:
-    radial-gradient(circle at 32% 28%, rgba(255,255,255,.7), transparent 42%),
-    var(--c, var(--accent));
-  border-radius: 50% 50% 50% 50% / 55% 55% 46% 46%;
-  opacity: .8;
-  animation: balloonUp 17s linear infinite;
-  will-change: transform;
+/* Círculos de features que entram animados (hero)
+   Mobile-first: linha centralizada abaixo do núcleo.
+   No desktop (≥980px) viram círculos flutuando ao redor do núcleo. */
+.feature-bubbles {
+  order: 3; /* fica depois do conteúdo e do núcleo no mobile */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 6px;
+  pointer-events: none;
 }
-/* Nó + barbante do balão */
-.balloon::before {
-  content: ""; position: absolute; top: 100%; left: 50%;
-  transform: translate(-50%, -1px);
-  border-left: 4px solid transparent; border-right: 4px solid transparent;
-  border-top: 6px solid var(--c, var(--accent));
+.feature-bubble {
+  /* flutuação suave depois de entrar (transform no elemento externo) */
+  animation: bubbleFloat 6s ease-in-out infinite;
+  animation-delay: var(--d, 0s);
 }
-.balloon::after {
-  content: ""; position: absolute; top: calc(100% + 5px); left: 50%;
-  width: 1px; height: 34px;
-  background: color-mix(in srgb, var(--c, var(--accent)) 55%, transparent);
-  transform: translateX(-50%);
+.feature-bubble b {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  width: clamp(78px, 8vw, 104px);
+  aspect-ratio: 1;
+  padding: 10px;
+  font-weight: 700;
+  font-size: clamp(.62rem, 1.4vw, .74rem);
+  line-height: 1.18;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--c) 15%, var(--surface));
+  border: 1.5px solid color-mix(in srgb, var(--c) 55%, var(--border));
+  border-radius: 50%;
+  box-shadow: var(--shadow-md), 0 0 0 6px color-mix(in srgb, var(--c) 10%, transparent);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  /* entrada animada: aparece crescendo (opacity+scale no elemento interno) */
+  opacity: 0;
+  transform: scale(.35);
+  animation: bubbleIn .6s var(--ease) forwards;
+  animation-delay: var(--d, 0s);
 }
-.balloons--cta .balloon { opacity: .55; }
-@keyframes balloonUp {
-  0%   { transform: translateY(0) translateX(0) rotate(-4deg); }
-  50%  { transform: translateY(-55vh) translateX(16px) rotate(4deg); }
-  100% { transform: translateY(-115vh) translateX(-6px) rotate(-4deg); }
+@keyframes bubbleIn { to { opacity: 1; transform: none; } }
+@keyframes bubbleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+
+/* Desktop: círculos espalhados ao redor do núcleo orbital */
+@media (min-width: 980px) {
+  .feature-bubbles {
+    position: absolute; inset: 0;
+    display: block;
+    margin-top: 0;
+    z-index: 2;
+  }
+  .feature-bubble { position: absolute; }
+  .fb--1 { top: 4%;  left: 60%; }
+  .fb--2 { top: 30%; left: 88%; }
+  .fb--3 { top: 68%; left: 84%; }
+  .fb--4 { top: 88%; left: 58%; }
 }
 
 .hero-content { position: relative; z-index: 2; max-width: 640px; }
@@ -1406,7 +1432,9 @@ p { margin: 0; overflow-wrap: break-word; }
   .wa-float { transition: none; }
   .orbit-glow, .orbit-ring, .orbit-chip, .orbit-particle, .orbit-core { animation: none; }
   .logos-track { animation: none; }
-  .balloons { display: none; } /* sem balões flutuando em movimento reduzido */
+  /* Círculos de features continuam visíveis (têm texto), só sem animação */
+  .feature-bubble { animation: none; }
+  .feature-bubble b { animation: none; opacity: 1; transform: none; }
 }
 
 /* ----------------------------------------------------------------
