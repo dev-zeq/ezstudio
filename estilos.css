@@ -477,9 +477,10 @@ p { margin: 0; overflow-wrap: break-word; }
   position: relative;
   display: grid;
   gap: clamp(36px, 7vw, 56px);
-  width: min(100%, var(--maxw));
-  margin-inline: auto;
-  padding: clamp(110px, 18vw, 150px) var(--pad) clamp(56px, 10vw, 90px);
+  /* Fundo (aurora + malha) ocupa a tela toda; o conteúdo segue centralizado
+     em até --maxw graças ao padding lateral que "empurra" para o centro. */
+  width: 100%;
+  padding: clamp(110px, 18vw, 150px) max(var(--pad), calc((100% - var(--maxw)) / 2)) clamp(56px, 10vw, 90px);
   overflow: hidden;
 }
 
@@ -558,7 +559,9 @@ p { margin: 0; overflow-wrap: break-word; }
 /* Desktop: círculos espalhados ao redor do núcleo orbital */
 @media (min-width: 980px) {
   .feature-bubbles {
-    position: absolute; inset: 0;
+    position: absolute;
+    /* Ancorado à área de conteúdo (–maxw) centralizada, acompanhando o núcleo */
+    inset: 0 max(var(--pad), calc((100% - var(--maxw)) / 2));
     display: block;
     margin-top: 0;
     z-index: 2;
