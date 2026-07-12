@@ -11,10 +11,10 @@
    ---------------------------------------------------------------- */
 :root {
   /* Base */
-  --bg:             #fbfbfa;
-  --bg-soft:        #f4f3f0;
+  --bg:             #fbfbfd;
+  --bg-soft:        #f1effb;
   --surface:        #ffffff;
-  --surface-2:      #faf9f7;
+  --surface-2:      #f8f6ff;
 
   /* Bordas */
   --border:         #e6e4df;
@@ -25,21 +25,21 @@
   --muted:          #66645e;
   --faint:          #9a988f;
 
-  /* Espectro (acentos) */
-  --c-cyan:    #06b6d4;
-  --c-indigo:  #4f46e5;
-  --c-violet:  #8b5cf6;
-  --c-pink:    #ec4899;
-  --c-amber:   #f59e0b;
+  /* Espectro (acentos) — versões saturadas e vibrantes */
+  --c-cyan:    #00c2dd;
+  --c-indigo:  #4f39f6;
+  --c-violet:  #8b2fff;
+  --c-pink:    #f6198e;
+  --c-amber:   #ff9500;
   --wa:        #25d366;
 
   /* Acento "padrão" da interface (botões, links) */
   --accent:    var(--c-indigo);
   --accent-2:  var(--c-violet);
 
-  /* Gradientes */
-  --grad-brand:    linear-gradient(120deg, #4f46e5 0%, #8b5cf6 100%);
-  --grad-spectrum: linear-gradient(90deg, #06b6d4, #4f46e5, #8b5cf6, #ec4899, #f59e0b);
+  /* Gradientes — marca tricolor mais elétrica */
+  --grad-brand:    linear-gradient(120deg, #4f39f6 0%, #8b2fff 52%, #f6198e 100%);
+  --grad-spectrum: linear-gradient(90deg, #00c2dd, #4f39f6, #8b2fff, #f6198e, #ff9500);
 
   /* Sombras */
   --shadow-sm: 0 1px 3px rgba(20,19,15,.06), 0 1px 2px rgba(20,19,15,.04);
@@ -377,16 +377,28 @@ p { margin: 0; overflow-wrap: break-word; }
   align-items: center; gap: 8px;
   margin: 0 0 14px;
   font-family: var(--font-mono);
-  font-size: .72rem; font-weight: 500;
+  font-size: .72rem; font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--muted);
+  /* Texto do eyebrow pintado com o espectro */
+  background: var(--grad-spectrum);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradShift 8s ease infinite;
 }
 .eyebrow::before {
   content: ""; width: 22px; height: 2px;
   background: var(--grad-spectrum); border-radius: 2px;
 }
-.eyebrow--light { color: rgba(255,255,255,.6); }
+.eyebrow--light {
+  background: none;
+  -webkit-text-fill-color: rgba(255,255,255,.75);
+  color: rgba(255,255,255,.75);
+  animation: none;
+}
 .eyebrow--light::before { opacity: .9; }
 
 .section-header { max-width: 720px; margin: 0 0 clamp(36px, 6vw, 56px); }
@@ -446,15 +458,15 @@ p { margin: 0; overflow-wrap: break-word; }
 }
 .section-blob {
   position: absolute;
-  width: 34vw;
-  max-width: 380px;
+  width: 40vw;
+  max-width: 460px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--c, var(--accent)), transparent 68%);
-  filter: blur(64px);
-  opacity: .22;
+  background: radial-gradient(circle, var(--c, var(--accent)), transparent 70%);
+  filter: blur(60px);
+  opacity: .4;
 }
-[data-theme="dark"] .section-blob { opacity: .3; }
+[data-theme="dark"] .section-blob { opacity: .46; }
 .section-blob--a { top: -12%;  left: -8%;  animation: drift1 24s ease-in-out infinite alternate; }
 .section-blob--b { bottom: -14%; right: -6%; animation: drift2 27s ease-in-out infinite alternate; }
 
@@ -497,6 +509,66 @@ p { margin: 0; overflow-wrap: break-word; }
 @keyframes drift1 { to { transform: translate(40px, 30px) scale(1.12); } }
 @keyframes drift2 { to { transform: translate(-36px, 26px) scale(1.08); } }
 @keyframes drift3 { to { transform: translate(30px, -28px) scale(1.14); } }
+
+/* Círculos de features que entram animados (hero)
+   Mobile-first: linha centralizada abaixo do núcleo.
+   No desktop (≥980px) viram círculos flutuando ao redor do núcleo. */
+.feature-bubbles {
+  order: 3; /* fica depois do conteúdo e do núcleo no mobile */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 6px;
+  pointer-events: none;
+}
+.feature-bubble {
+  /* flutuação suave depois de entrar (transform no elemento externo) */
+  animation: bubbleFloat 6s ease-in-out infinite;
+  animation-delay: var(--d, 0s);
+}
+.feature-bubble b {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  width: clamp(78px, 8vw, 104px);
+  aspect-ratio: 1;
+  padding: 10px;
+  font-weight: 700;
+  font-size: clamp(.62rem, 1.4vw, .74rem);
+  line-height: 1.18;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--c) 15%, var(--surface));
+  border: 1.5px solid color-mix(in srgb, var(--c) 55%, var(--border));
+  border-radius: 50%;
+  box-shadow: var(--shadow-md), 0 0 0 6px color-mix(in srgb, var(--c) 10%, transparent);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  /* entrada animada: aparece crescendo (opacity+scale no elemento interno) */
+  opacity: 0;
+  transform: scale(.35);
+  animation: bubbleIn .6s var(--ease) forwards;
+  animation-delay: var(--d, 0s);
+}
+@keyframes bubbleIn { to { opacity: 1; transform: none; } }
+@keyframes bubbleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+
+/* Desktop: círculos espalhados ao redor do núcleo orbital */
+@media (min-width: 980px) {
+  .feature-bubbles {
+    position: absolute; inset: 0;
+    display: block;
+    margin-top: 0;
+    z-index: 2;
+  }
+  .feature-bubble { position: absolute; }
+  .fb--1 { top: 4%;  left: 60%; }
+  .fb--2 { top: 30%; left: 88%; }
+  .fb--3 { top: 68%; left: 84%; }
+  .fb--4 { top: 88%; left: 58%; }
+}
 
 .hero-content { position: relative; z-index: 2; max-width: 640px; }
 
@@ -1360,6 +1432,30 @@ p { margin: 0; overflow-wrap: break-word; }
   .wa-float { transition: none; }
   .orbit-glow, .orbit-ring, .orbit-chip, .orbit-particle, .orbit-core { animation: none; }
   .logos-track { animation: none; }
+  /* Círculos de features continuam visíveis (têm texto), só sem animação */
+  .feature-bubble { animation: none; }
+  .feature-bubble b { animation: none; opacity: 1; transform: none; }
+}
+
+/* ----------------------------------------------------------------
+   CONFETE (comemoração ao clicar nos CTAs de WhatsApp)
+   ---------------------------------------------------------------- */
+.confetti-piece {
+  position: fixed;
+  z-index: 900;
+  width: 9px; height: 9px;
+  border-radius: 2px;
+  pointer-events: none;
+  will-change: transform, opacity;
+  animation: confettiPop .9s var(--ease) forwards;
+}
+.confetti-piece:nth-child(even) { border-radius: 50%; }
+@keyframes confettiPop {
+  0%   { transform: translate(0, 0) rotate(0); opacity: 1; }
+  100% { transform: translate(var(--dx, 0), calc(var(--dy, 0) + 140px)) rotate(var(--rot, 180deg)); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .confetti-piece { display: none; }
 }
 
 /* ----------------------------------------------------------------

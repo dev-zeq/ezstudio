@@ -340,4 +340,43 @@
     });
   }
 
+
+  /* ----------------------------------------------------------
+     13. CONFETE AO CLICAR NOS BOTÕES DE WHATSAPP
+        Pequena comemoração ao dar o passo de falar com a gente.
+        Puro JS, sem bibliotecas, e desligado em movimento reduzido.
+     ---------------------------------------------------------- */
+  if (!reduzMovimento) {
+    const CORES = ['#00c2dd', '#4f39f6', '#8b2fff', '#f6198e', '#ff9500', '#25d366', '#ffd60a'];
+
+    function soltarConfete(x, y) {
+      const N = 26;
+      for (let i = 0; i < N; i++) {
+        const p = document.createElement('span');
+        p.className = 'confetti-piece';
+        const cor = CORES[Math.floor(Math.random() * CORES.length)];
+        const ang = Math.random() * Math.PI * 2;          // direção
+        const dist = 60 + Math.random() * 120;            // alcance
+        const dx = Math.cos(ang) * dist;
+        const dy = Math.sin(ang) * dist - (60 + Math.random() * 60); // tende a subir
+        p.style.left = x + 'px';
+        p.style.top  = y + 'px';
+        p.style.background = cor;
+        p.style.setProperty('--dx', dx.toFixed(0) + 'px');
+        p.style.setProperty('--dy', dy.toFixed(0) + 'px');
+        p.style.setProperty('--rot', (Math.random() * 720 - 360).toFixed(0) + 'deg');
+        p.style.animationDelay = (Math.random() * 0.08).toFixed(3) + 's';
+        document.body.appendChild(p);
+        p.addEventListener('animationend', () => p.remove());
+      }
+    }
+
+    // Dispara nos CTAs de WhatsApp sem atrapalhar a navegação (que abre em nova aba)
+    $$('.button-primary, .whatsapp-button, .wa-float, .pricing-cta-primary, .mobile-menu-cta').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        soltarConfete(e.clientX || window.innerWidth / 2, e.clientY || window.innerHeight / 2);
+      });
+    });
+  }
+
 })();
