@@ -133,6 +133,7 @@
         <span class="aurora-blob aurora-blob--1"></span>
         <span class="aurora-blob aurora-blob--2"></span>
         <span class="aurora-blob aurora-blob--3"></span>
+        <span class="aurora-blob aurora-blob--4"></span>
         <span class="aurora-grid"></span>
       </div>
 
@@ -170,79 +171,57 @@
         </p>
       </div>
 
-      <!-- Assinatura visual: prisma que refrata a luz em um espectro -->
-      <div class="prism-stage" aria-hidden="true">
-        <svg class="prism-svg" viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg" role="img">
-          <defs>
-            <linearGradient id="px-glass" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
-              <stop offset="50%" stop-color="#c7d2fe" stop-opacity="0.35"/>
-              <stop offset="100%" stop-color="#a5b4fc" stop-opacity="0.15"/>
-            </linearGradient>
-            <linearGradient id="px-in" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-              <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95"/>
-            </linearGradient>
-            <linearGradient id="px-cyan"   x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#06b6d4" stop-opacity="0.05"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient>
-            <linearGradient id="px-indigo" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4f46e5" stop-opacity="0.05"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
-            <linearGradient id="px-violet" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.05"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
-            <linearGradient id="px-pink"   x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ec4899" stop-opacity="0.05"/><stop offset="100%" stop-color="#f472b6"/></linearGradient>
-            <linearGradient id="px-amber"  x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.05"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-            <filter id="px-soft" x="-40%" y="-40%" width="180%" height="180%">
-              <feGaussianBlur stdDeviation="6"/>
-            </filter>
-          </defs>
+      <!-- Assinatura visual: núcleo vivo com o espectro orbitando ao redor -->
+      <div class="orbit-stage" aria-hidden="true">
+        <span class="orbit-glow"></span>
 
-          <!-- Feixe de entrada (luz branca = a sua ideia) -->
-          <rect class="prism-in" x="20" y="206" width="220" height="6" rx="3" fill="url(#px-in)"/>
+        <div class="orbit-ring orbit-ring--out">
+          <span class="orbit-chip orbit-chip--1" style="--c:#06b6d4">🌐</span>
+          <span class="orbit-chip orbit-chip--3" style="--c:#ec4899">✨</span>
+        </div>
+        <div class="orbit-ring orbit-ring--in">
+          <span class="orbit-chip orbit-chip--2" style="--c:#8b5cf6">⚡</span>
+          <span class="orbit-chip orbit-chip--4" style="--c:#f59e0b">📈</span>
+        </div>
 
-          <!-- Feixes de saída (o espectro = as soluções) -->
-          <g class="prism-beams">
-            <g class="beam beam--1"><rect x="262" y="207" width="248" height="5" rx="2.5" fill="url(#px-cyan)"   transform="rotate(-26 262 209)" filter="url(#px-soft)"/></g>
-            <g class="beam beam--2"><rect x="262" y="207" width="248" height="5" rx="2.5" fill="url(#px-indigo)" transform="rotate(-13 262 209)" filter="url(#px-soft)"/></g>
-            <g class="beam beam--3"><rect x="262" y="207" width="248" height="5" rx="2.5" fill="url(#px-violet)" transform="rotate(0 262 209)"   filter="url(#px-soft)"/></g>
-            <g class="beam beam--4"><rect x="262" y="207" width="248" height="5" rx="2.5" fill="url(#px-pink)"   transform="rotate(13 262 209)"  filter="url(#px-soft)"/></g>
-            <g class="beam beam--5"><rect x="262" y="207" width="248" height="5" rx="2.5" fill="url(#px-amber)"  transform="rotate(26 262 209)"  filter="url(#px-soft)"/></g>
-          </g>
+        <div class="orbit-core">
+          <span class="orbit-core-mark">Ez</span>
+        </div>
 
-          <!-- Pontos de luz nas pontas dos feixes -->
-          <g class="prism-dots">
-            <circle class="dot dot--1" cx="487" cy="98"  r="4" fill="#22d3ee"/>
-            <circle class="dot dot--2" cx="505" cy="153" r="4" fill="#6366f1"/>
-            <circle class="dot dot--3" cx="510" cy="209" r="4" fill="#a78bfa"/>
-            <circle class="dot dot--4" cx="505" cy="265" r="4" fill="#f472b6"/>
-            <circle class="dot dot--5" cx="487" cy="320" r="4" fill="#fbbf24"/>
-          </g>
-
-          <!-- O prisma (vidro) -->
-          <g class="prism-glass">
-            <polygon points="250,96 196,300 304,300" fill="url(#px-glass)" stroke="#ffffff" stroke-opacity="0.55" stroke-width="1.5"/>
-            <polygon points="250,96 196,300 304,300" fill="none" stroke="#a5b4fc" stroke-opacity="0.4" stroke-width="1"/>
-            <line class="prism-glint" x1="250" y1="110" x2="232" y2="180" stroke="#ffffff" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round"/>
-          </g>
-        </svg>
+        <span class="orbit-particle p1"></span>
+        <span class="orbit-particle p2"></span>
+        <span class="orbit-particle p3"></span>
+        <span class="orbit-particle p4"></span>
       </div>
 
     </section>
 
-    <!-- FAIXA DE PROJETOS NO AR ──────────────────────────────────── -->
+    <!-- FAIXA DE PROJETOS NO AR (marquee contínuo) ────────────────── -->
     <section class="logos-strip" aria-labelledby="projectsTitle">
       <p class="eyebrow" id="projectsTitle">Projetos no ar</p>
-      <div class="logos-row">
-        <span>Bez Clean</span>
-        <span class="logos-dot" aria-hidden="true">·</span>
-        <span>Bruna Oliveira</span>
-        <span class="logos-dot" aria-hidden="true">·</span>
-        <span>Elis Studio</span>
-        <span class="logos-dot" aria-hidden="true">·</span>
-        <span>Valdoir Miranda</span>
-        <span class="logos-dot" aria-hidden="true">·</span>
-        <span>Lan Blackout</span>
+      <div class="logos-marquee">
+        <div class="logos-track">
+          <span class="logos-pill" style="--c:#06b6d4">Bez Clean</span>
+          <span class="logos-pill" style="--c:#4f46e5">Bruna Oliveira</span>
+          <span class="logos-pill" style="--c:#ec4899">Elis Studio</span>
+          <span class="logos-pill" style="--c:#f59e0b">Valdoir Miranda</span>
+          <span class="logos-pill" style="--c:#8b5cf6">Lan Blackout</span>
+          <!-- Duplicado (aria-hidden) para o loop infinito ficar contínuo -->
+          <span class="logos-pill" style="--c:#06b6d4" aria-hidden="true">Bez Clean</span>
+          <span class="logos-pill" style="--c:#4f46e5" aria-hidden="true">Bruna Oliveira</span>
+          <span class="logos-pill" style="--c:#ec4899" aria-hidden="true">Elis Studio</span>
+          <span class="logos-pill" style="--c:#f59e0b" aria-hidden="true">Valdoir Miranda</span>
+          <span class="logos-pill" style="--c:#8b5cf6" aria-hidden="true">Lan Blackout</span>
+        </div>
       </div>
     </section>
 
     <!-- SERVIÇOS ─────────────────────────────────────────────────── -->
     <section class="section services" id="servicos" aria-labelledby="servicesTitle">
+      <div class="section-blobs" aria-hidden="true">
+        <span class="section-blob section-blob--a" style="--c:#4f46e5"></span>
+        <span class="section-blob section-blob--b" style="--c:#ec4899"></span>
+      </div>
 
       <div class="section-header reveal">
         <p class="eyebrow">Serviços</p>
@@ -293,6 +272,10 @@
 
     <!-- COMO FUNCIONA ────────────────────────────────────────────── -->
     <section class="section process" id="processo" aria-labelledby="processTitle">
+      <div class="section-blobs" aria-hidden="true">
+        <span class="section-blob section-blob--a" style="--c:#ec4899"></span>
+        <span class="section-blob section-blob--b" style="--c:#8b5cf6"></span>
+      </div>
 
       <div class="section-header section-header-center reveal">
         <p class="eyebrow">Como funciona</p>
@@ -331,6 +314,10 @@
 
     <!-- PORTFÓLIO ────────────────────────────────────────────────── -->
     <section class="section portfolio" id="portfolio" aria-labelledby="portfolioTitle">
+      <div class="section-blobs" aria-hidden="true">
+        <span class="section-blob section-blob--a" style="--c:#06b6d4"></span>
+        <span class="section-blob section-blob--b" style="--c:#f59e0b"></span>
+      </div>
 
       <div class="section-header reveal">
         <p class="eyebrow">Portfólio</p>
@@ -435,6 +422,10 @@
 
     <!-- DEMOS INTERATIVAS ───────────────────────────────────── -->
     <section class="section demos-section" id="demos" aria-labelledby="demosTitle">
+      <div class="section-blobs" aria-hidden="true">
+        <span class="section-blob section-blob--a" style="--c:#ec4899"></span>
+        <span class="section-blob section-blob--b" style="--c:#4f46e5"></span>
+      </div>
 
       <div class="section-header reveal">
         <p class="eyebrow">Demos interativas</p>
@@ -518,6 +509,10 @@
 
     <!-- DEPOIMENTOS ──────────────────────────────────────────────── -->
     <section class="section testimonials" id="depoimentos" aria-labelledby="testimonialsTitle">
+      <div class="section-blobs" aria-hidden="true">
+        <span class="section-blob section-blob--a" style="--c:#8b5cf6"></span>
+        <span class="section-blob section-blob--b" style="--c:#06b6d4"></span>
+      </div>
 
       <div class="section-header section-header-center reveal">
         <p class="eyebrow">Quem confiou</p>
@@ -562,6 +557,10 @@
 
     <!-- PLANOS ───────────────────────────────────────────────────── -->
     <section class="section pricing" id="planos" aria-labelledby="pricingTitle">
+      <div class="section-blobs" aria-hidden="true">
+        <span class="section-blob section-blob--a" style="--c:#f59e0b"></span>
+        <span class="section-blob section-blob--b" style="--c:#ec4899"></span>
+      </div>
 
       <div class="section-header section-header-center reveal">
         <p class="eyebrow">Planos</p>
@@ -653,6 +652,10 @@
 
     <!-- O ESTÚDIO (diferenciais honestos) ─────────────────────────── -->
     <section class="section studio" id="estudio" aria-labelledby="studioTitle">
+      <div class="section-blobs" aria-hidden="true">
+        <span class="section-blob section-blob--a" style="--c:#4f46e5"></span>
+        <span class="section-blob section-blob--b" style="--c:#ec4899"></span>
+      </div>
       <div class="studio-grid">
 
         <div class="reveal">
@@ -710,6 +713,11 @@
 
     <!-- CTA FINAL ────────────────────────────────────────────────── -->
     <section class="final-cta" aria-labelledby="ctaTitle">
+      <div class="final-cta-blobs" aria-hidden="true">
+        <span class="final-cta-blob final-cta-blob--a"></span>
+        <span class="final-cta-blob final-cta-blob--b"></span>
+        <span class="final-cta-blob final-cta-blob--c"></span>
+      </div>
       <div class="final-cta-inner reveal">
         <p class="eyebrow eyebrow--light">Vamos conversar?</p>
         <h2 id="ctaTitle">Conte sua ideia. Eu te mostro o caminho mais simples até ela no ar.</h2>

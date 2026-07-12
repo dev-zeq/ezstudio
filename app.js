@@ -309,10 +309,10 @@
 
   if (pointerFino && !reduzMovimento) {
 
-    // 11. Leve inclinação do prisma seguindo o mouse
-    const prisma = $('.prism-svg');
+    // 11. O núcleo vivo do hero desliza levemente seguindo o mouse
+    const orbit = $('.orbit-stage');
     const heroSec = $('.hero');
-    if (prisma && heroSec) {
+    if (orbit && heroSec) {
       let rafTilt = null;
       heroSec.addEventListener('mousemove', (e) => {
         const r = heroSec.getBoundingClientRect();
@@ -320,15 +320,13 @@
         const py = (e.clientY - r.top)  / r.height - 0.5;
         if (rafTilt) cancelAnimationFrame(rafTilt);
         rafTilt = requestAnimationFrame(() => {
-          // ângulos pequenos = efeito sutil e elegante
-          prisma.style.setProperty('--pry', (px * 10).toFixed(2) + 'deg');
-          prisma.style.setProperty('--prx', (-py * 8).toFixed(2) + 'deg');
+          // deslocamento pequeno = efeito sutil e elegante
+          orbit.style.transform = `translate(${(px * 14).toFixed(2)}px, ${(py * 12).toFixed(2)}px)`;
         });
       });
-      // Ao tirar o mouse, o prisma volta suavemente ao lugar
+      // Ao tirar o mouse, o núcleo volta suavemente ao lugar
       heroSec.addEventListener('mouseleave', () => {
-        prisma.style.setProperty('--pry', '0deg');
-        prisma.style.setProperty('--prx', '0deg');
+        orbit.style.transform = '';
       });
     }
 
